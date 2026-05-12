@@ -14,5 +14,5 @@ class ProductViewSet(ModelViewSet):
 class StockViewSet(ModelViewSet):
     queryset = Stock.objects.all()
     serializer_class = StockSerializer
-    search_fields = ["address"]
+    search_fields = ["address", 'products__title', 'products__description']
     filterset_fields = ["address", "products"]
